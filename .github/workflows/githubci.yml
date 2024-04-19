@@ -44,6 +44,7 @@ jobs:
           - 'm60_keyboard'
           - 'mdk_nrf52840_dongle'
           - 'mikoto'
+          - 'modsring_nrf52840'
           - 'nice_nano'
           - 'nrf52840_bboard'
           - 'nRF52840_connect_kit'
