@@ -120,6 +120,8 @@ extern void tusb_hal_nrf_power_event(uint32_t event);
 #define BOOTLOADER_VERSION_REGISTER     NRF_TIMER2->CC[0]
 #define DFU_SERIAL_STARTUP_INTERVAL     1000
 
+#define MK_BOOTLOADER_VERSION_MAIN      0x00020A
+
 // Allow for using reset button essentially to swap between application and bootloader.
 // This is controlled by a flag in the app and is the behavior of CPX and all Arcade boards when using MakeCode.
 // DFU_DBL_RESET magic is used to determined which mode is entered
@@ -168,7 +170,8 @@ int main(void) {
 
   // Save bootloader version to pre-defined register, retrieved by application
   // TODO move to CF2
-  BOOTLOADER_VERSION_REGISTER = (MK_BOOTLOADER_VERSION);
+  //BOOTLOADER_VERSION_REGISTER = (MK_BOOTLOADER_VERSION);
+  BOOTLOADER_VERSION_REGISTER = MK_BOOTLOADER_VERSION_MAIN;
 
   board_init();
   bootloader_init();
